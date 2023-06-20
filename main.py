@@ -1,6 +1,7 @@
 # This will be the beginning of my 2nd App - a Web portfolio! I needed one of these, anyway.
 
 import streamlit as st
+from annotated_text import annotated_text as at
 
 st.set_page_config(layout="wide")
 
@@ -15,6 +16,12 @@ with col2:
 
 Am terminated it excellence invitation projection as. She graceful shy believed distance use nay. Lively is people so basket ladies window expect. Supply as so period it enough income he genius. Themselves acceptance bed sympathize get dissimilar way admiration son. Design for are edward regret met lovers. This are calm case roof and. """
     st.info(content)
+#
+# greeting = "Below you can find some of the apps I have built in Python and in R. Feel free to contact me!"
+# st.subheader(greeting)
 
-greeting = "Below you can find some of the apps I have built in Python and in R. Feel free to contact me!"
-st.subheader(greeting)
+at("Below you can find some of the apps I have built in ",
+                   ("Python", "", "#fea"),
+                   "and in ",
+                   ("R", "","#faf"),
+                   ". Feel free to contact me!")
