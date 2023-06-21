@@ -12,7 +12,7 @@ import pandas
 
 st.set_page_config(layout="wide")
 
-rain("👻")
+rain("💻", falling_speed=-10)
 
 headcol1, headcol2 = st.columns(2)
 
@@ -30,20 +30,32 @@ Am terminated it excellence invitation projection as. She graceful shy believed 
 # st.subheader(greeting)
 
 at("Below you can find some of the apps I have built in ",
-                   ("Python", "", "#fea"),
+                   ("Python", "", "#ffeeaa"),
                    "and in ",
                    ("R", "","#faf"),
                    ". Feel free to contact me!")
-
+print()
+at("(By the way, this entire Web page was written in ",
+   ("Python", "", "#fea"),
+   " using ",
+   ("Streamlit","", "#92fa34"),
+   "!)")
 import pandas
 data = pandas.read_csv ("data.csv", sep=",")
 
-bodycol1, bodycol2 = st.columns(2)
+bodycol1, bodycolspace, bodycol2 = st.columns([1.5, 0.2, 1.5])
 
 with bodycol1:
     for index, row in data[:10].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"], use_column_width=True)
+        st.write(f"[Placeholder Source Code Link]({row['url']})")
 
 with bodycol2:
     for index, row in data[10:].iterrows():
         st.header(row["title"])
+        st.write(row["description"])
+        st.image("images/" + row["image"], use_column_width=True)
+        st.write("[Placeholder Source Code Link](https://en.wikipedia.org)")
+
