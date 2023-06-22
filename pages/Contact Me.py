@@ -6,6 +6,7 @@ from streamlit_card import card
 from markdownlit import mdlit
 from streamlit_extras.switch_page_button import switch_page
 from streamlit_card import card
+from send_email import send_email
 
 st.set_page_config(layout="wide")
 
@@ -16,9 +17,20 @@ st.title("Contact Me:")
 with st.form(key="contact_form"):
     user_email = st.text_input("Enter your e-mail address here:", placeholder="Your e-mail...")
     user_message = st.text_area("Enter your message to me here:", placeholder="Your message...")
+    formatted_message = f"""Subject: {user_email} has reached out to you! \n
+     
+     They wrote:\n
+     
+     {user_message}
+     \n\n
+     This message was sent by:\n
+     {user_email}."""
+
     submit_button = st.form_submit_button("Send me your message!")
     if submit_button:
-        print("Okay!")
+        print("e-mail sent!")
+        send_email(formatted_message)
+        st.info("Your e-mail was successfully delivered!")
 
 
 
