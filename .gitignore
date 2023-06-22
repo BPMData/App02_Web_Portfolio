@@ -1,3 +1,5 @@
 /venv/
 Revision+Presentation.pdf
 /.streamlit/pip freeze > requirements.txt
+/.streamlit/
+/.streamlit/secrets.toml

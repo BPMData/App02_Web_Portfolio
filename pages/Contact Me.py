@@ -41,3 +41,4 @@ st.divider()
 take_me = st.button("Take me back to the projects!")
 if take_me:
     switch_page("My Projects")
+st.divider()
