@@ -16,6 +16,7 @@ st.title("Contact Me:")
 
 with st.form(key="contact_form"):
     user_email = st.text_input("Enter your e-mail address here:", placeholder="Your e-mail...")
+    interest = st.selectbox("What topic do you want to discuss?", options=("Job Inquiries", "Project Proposals","Other"))
     user_message = st.text_area("Enter your message to me here:", placeholder="Your message...")
     formatted_message = f"""Subject: {user_email} has reached out to you! \n
      
@@ -23,6 +24,9 @@ with st.form(key="contact_form"):
      
      {user_message}
      \n\n
+     They said they were interested in:\n 
+     {interest}.\n
+     
      This message was sent by:\n
      {user_email}."""
 
@@ -31,7 +35,6 @@ with st.form(key="contact_form"):
         print("e-mail sent!")
         send_email(formatted_message)
         st.info("Your e-mail was successfully delivered!")
-
 
 
 st.divider()
