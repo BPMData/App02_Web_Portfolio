@@ -14,10 +14,12 @@ st.set_page_config(layout="wide")
 
 rain("💻", falling_speed=-10)
 
-headcol1, headcol2 = st.columns(2)
+# headcol1, headcol2 = st.columns(2)
+#
+# with headcol1:
+#     st.image("images/cormanowild.jpg")
 
-with headcol1:
-    st.image("images/cormanowild.jpg")
+headcol2 = st.columns(1)
 
 with headcol2:
     st.title("Cormano Wild")
@@ -56,7 +58,7 @@ with bodycol1:
         colored_header(label=row["title"], description="", color_name="orange-70")
 #       colored_header(label=row["title"], description=f'{row["description"]}', color_name="orange-70")
         st.write(row["description"])
-        st.image("images/" + row["image"], use_column_width=True)
+        # st.image("images/" + row["image"], use_column_width=True)
         st.write(f"[Placeholder Source Code Link]({row['url']})")
 
 with bodycol2:
@@ -64,7 +66,7 @@ with bodycol2:
         # st.header(row["title"])
         colored_header(label=row["title"], description="", color_name="yellow-70")
         st.write(row["description"])
-        st.image("images/" + row["image"], use_column_width=True)
+        # st.image("images/" + row["image"], use_column_width=True)
         st.write("[Placeholder Source Code Link](https://en.wikipedia.org)")
 
 st.divider()
