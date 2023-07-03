@@ -18,6 +18,29 @@ def send_email(message=""):
         server.login(sender_username, password)
         server.sendmail(sender_username, recipient, message)
 
+content = """
+<html>
+<head>
+<style>
+.bold {
+    font-weight: bold;
+}
 
-send_email()
+.underline {
+    text-decoration: underline;
+}
+
+.large {
+    font-size: larger;
+}
+</style>
+</head>
+<body>
+<span class="bold">Hello.</span><br><br>
+<span class="large">My name is David.</span><br><br>
+<span class="underline">Bye!</span>
+</body>
+</html>"""
+
+send_email(content)
 
